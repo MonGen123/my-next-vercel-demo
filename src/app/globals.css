@@ -2,7 +2,144 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Neue Machina";
+  src: url("/fonts/NeueMachina-Regular.woff2") format("woff2"),
+    url("/fonts/NeueMachina-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Machina";
+  src: url("/fonts/NeueMachina-Light.woff2") format("woff2"),
+    url("/fonts/NeueMachina-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Machina";
+  src: url("/fonts/NeueMachina-Ultrabold.woff2") format("woff2"),
+    url("/fonts/NeueMachina-Ultrabold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NEXT Book";
+  src: url("/fonts/next-book/NEXTBook-Bold.woff2") format("woff2"),
+    url("/fonts/next-book/NEXTBook-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NEXT Book";
+  src: url("/fonts/next-book/NEXTBook-BoldItalic.woff2") format("woff2"),
+    url("/fonts/next-book/NEXTBook-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NEXT Book";
+  src: url("/fonts/next-book/NEXTBook-Italic.woff2") format("woff2"),
+    url("/fonts/next-book/NEXTBook-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NEXT Book";
+  src: url("/fonts/next-book/NEXTBook-Thin.woff2") format("woff2"),
+    url("/fonts/next-book/NEXTBook-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NEXT Book";
+  src: url("/fonts/next-book/NEXTBook-Regular.woff2") format("woff2"),
+    url("/fonts/next-book/NEXTBook-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NEXT Poster";
+  src: url("/fonts/next-book/NEXTPoster-Bold.woff2") format("woff2"),
+    url("/fonts/next-book/NEXTPoster-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NEXT Book";
+  src: url("/fonts/next-book/NEXTBook-ThinItalic.woff2") format("woff2"),
+    url("/fonts/next-book/NEXTBook-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NEXT Poster";
+  src: url("/fonts/next-book/NEXTPoster-BoldItalic.woff2") format("woff2"),
+    url("/fonts/next-book/NEXTPoster-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NEXT Poster";
+  src: url("/fonts/next-book/NEXTPoster-Italic.woff2") format("woff2"),
+    url("/fonts/next-book/NEXTPoster-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NEXT Poster";
+  src: url("/fonts/next-book/NEXTPoster-Regular.woff2") format("woff2"),
+    url("/fonts/next-book/NEXTPoster-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NEXT Poster";
+  src: url("/fonts/next-book/NEXTPoster-Thin.woff2") format("woff2"),
+    url("/fonts/next-book/NEXTPoster-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NEXT Poster";
+  src: url("/fonts/next-book/NEXTPoster-ThinItalic.woff2") format("woff2"),
+    url("/fonts/next-book/NEXTPoster-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
+  font-family: "NEXT Book";
+  font-size: 16px;
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -18,16 +155,34 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .card-mask {
+    clip-path: path(
+      "M178.453 1H359C371.15 1 381 10.8497 381 23V220.228C381 230.596 372.596 239 362.228 239H355.952C349.051 239 343.457 233.406 343.457 226.505C343.457 219.604 337.862 214.01 330.962 214.01H199.5C187.35 214.01 177.5 204.16 177.5 192.01V167.815C177.5 155.665 167.65 145.815 155.5 145.815H23C10.8497 145.815 1 135.965 1 123.815L0.999995 57.9067C0.999994 45.7564 10.8497 35.9067 23 35.9067H143.547C153.186 35.9067 161 28.0925 161 18.4533C161 8.81413 168.814 1 178.453 1Z"
+    );
+  }
+
+  .card-1-mask {
+    clip-path: path(
+      "M31.9999 0.000756464L384 6.30388e-05C401.673 2.82235e-05 416 14.3269 416 32.0001L416 162.792C416 168.192 414.634 173.503 412.028 178.232L410.162 181.621C404.664 191.601 404.888 203.751 410.749 213.522L411.442 214.677C414.424 219.649 416 225.339 416 231.137L416 246C416 263.673 401.673 278 384 278L32 278C14.3269 278 4.94914e-05 263.673 1.97476e-05 246L-1.01193e-05 231.137C-4.0383e-05 225.339 1.57549 219.649 4.55816 214.677L5.25124 213.521C11.1121 203.751 11.3356 191.6 5.83807 181.621L3.97134 178.232C1.36614 173.503 -3.78811e-05 168.191 -3.76447e-05 162.792L-3.19186e-05 32.0008C-3.11449e-05 14.3277 14.3268 0.00079128 31.9999 0.000756464Z"
+    );
+  }
+
+  .card-2-mask {
+    clip-path: path(
+      "M31.9997 0L384.001 -1.38868e-06C401.674 -6.2174e-07 416.001 14.3268 416.001 31.9999L416.001 78.1226C416.001 84.5537 414.032 90.8306 410.358 96.1092L409.39 97.5011C402.176 107.866 402.456 121.697 410.083 131.762C413.923 136.829 416.001 143.012 416.001 149.37L416.001 246.001C416.001 263.674 401.674 278.001 384.001 278.001L31.9995 278C14.3264 278 -0.000438855 263.673 -0.00040756 246L-0.0002202 149.369C-0.000189402 143.011 2.07803 136.828 5.91781 131.761C13.545 121.696 13.8249 107.865 6.61132 97.5L5.64263 96.1081C1.96902 90.8295 -0.000186828 84.5527 -0.000217063 78.1216L-0.00036762 32.0001C-0.000427877 14.3269 14.3265 0 31.9997 0Z"
+    );
+  }
+
+  .card-3-mask {
+    clip-path: path(
+      "M1.57233e-07 238.001L9.35541e-07 39.9999C1.02238e-06 17.9085 17.9086 -6.26008e-05 40 -6.45321e-05L229.45 -8.10943e-05C238.544 -8.18894e-05 247.367 3.09901 254.464 8.7862L283.573 32.1138C290.67 37.801 299.493 40.9001 308.587 40.9001L376 40.9001C398.091 40.9001 416 58.8086 416 80.9L416 238C416 260.092 398.091 278 376 278L40 278C17.9086 278 -1.56562e-06 260.092 1.57233e-07 238.001Z"
+    );
   }
 }
